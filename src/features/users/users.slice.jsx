@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
 
-const USERS_URL = `${process.env.REACT_APP_SERVERURL}/users`;
+const USERS_URL = `${import.meta.env.VITE_SERVERURL}/users`;
 
 const initialState = {
     users: [],

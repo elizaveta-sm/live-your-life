@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Button, { BUTTON_STYLE_TYPES } from "../../components/ui/button.component";
 
-const REGISTER_URL = `${process.env.REACT_APP_SERVERURL}/register`;
+const REGISTER_URL = `${import.meta.env.VITE_SERVERURL}/register`;
 
 const USER_REGEX = /(.*[a-z]){3}/i;
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/;

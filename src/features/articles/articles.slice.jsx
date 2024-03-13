@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const POSTS_URL = `${process.env.REACT_APP_SERVERURL}/posts`;
+const POSTS_URL = `${import.meta.env.VITE_SERVERURL}/posts`;
 
 const initialState = {
   articles: [],
