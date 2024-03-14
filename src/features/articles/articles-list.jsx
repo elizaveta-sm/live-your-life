@@ -16,10 +16,7 @@ import NoResults from '../../components/ui/no-results.component';
 
 const ArticlesList = () => {
     const routeParams = useParams();
-
-    console.log('route params: ', routeParams)
-
-    const selectedUserEmail = routeParams.userEmail;
+    const selectedUserEmail = routeParams.userEmail || '';
 
     const posts = useSelector(selectAllArticles);
     const postsStatus = useSelector(getArticlesStatus);
@@ -27,7 +24,9 @@ const ArticlesList = () => {
 
     const selectedUser = useSelector((state) => selectUserByEmail(state, selectedUserEmail));
 
-    const selectedUserPosts = useSelector((state) => selectArticleByUserEmail(state, selectedUserEmail));
+    const selectedUserPosts = useSelector((state) => {
+        if (selectedUserEmail.length !== 0) selectArticleByUserEmail(state, selectedUserEmail)
+    });
 
     const hasSelectedUser = () => {
         if (typeof selectedUser !== 'undefined') {

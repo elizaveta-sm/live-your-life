@@ -39,6 +39,10 @@ export const selectAllUsers = (state) => state.users.users;
 export const getUsersStatus = (state) => state.users.status;
 export const getUsersError = (state) => state.users.error;
 
-export const selectUserByEmail = (state, email) => state.users.users?.find(user => user.email === email);
+export const selectUserByEmail = (state, email) => {
+    if (email.length) state.users.users.find(user => user.email === email);
+
+    return undefined
+};
 
 export default usersSlice.reducer;
