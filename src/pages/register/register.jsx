@@ -98,7 +98,7 @@ const Register = () => {
 
     if (validUsername && email && validPassword && match) {
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_APP_SERVERURL}` + `/register`, 
+        REGISTER_URL, 
         { username, email, password, IMAGE_URL },
         {
             headers: { 'Content-Type': 'application/json' }
