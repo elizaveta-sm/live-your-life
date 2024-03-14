@@ -49,10 +49,12 @@ const ArticlesList = () => {
 
     let content;
 
-    if (postsStatus === 'succeeded') {
+    if (postsStatus === 'succeeded' && posts.length !== 0) {
         content = articles.map(article => <ArticlesExcerpt key={article.id} post={article} />)
     } else if (postsStatus === 'failed') {
         content = <p>{ postsError }</p>
+    } else if (posts.length === 0) {
+        content = <p>Nothing is here yet.</p>
     }
 
     return (
