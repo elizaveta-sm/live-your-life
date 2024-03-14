@@ -16,6 +16,9 @@ import NoResults from '../../components/ui/no-results.component';
 
 const ArticlesList = () => {
     const routeParams = useParams();
+
+    console.log('route params: ', routeParams)
+
     const selectedUserEmail = routeParams.userEmail;
 
     const posts = useSelector(selectAllArticles);
