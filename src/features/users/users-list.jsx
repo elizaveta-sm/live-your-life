@@ -12,10 +12,12 @@ const UsersList = () => {
 
     if (usersStatus === 'loading') {
         content = <p>Loading...</p>
-    } else if (usersStatus === 'succeeded') {
+    } else if (usersStatus === 'succeeded' && users.length !== 0) {
         content = users.flat().map(user => <CircledUserIcon key={user.email} user={user} />)
     } else if (usersStatus === 'failed') {
         content = <p>{ usersError }</p>
+    } else if (users.length === 0) {
+        content = <p>Nothing is here yet.</p>
     }
 
     return (
