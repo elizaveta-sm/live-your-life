@@ -17,7 +17,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 
 const USER_REGEX = /(.*[a-z]){3}/i;
-const UPDATE_PROFILE_URL = `${import.meta.env.VITE_SERVERURL}/update-profile`;
+const UPDATE_PROFILE_URL = `${import.meta.env.VITE_REACT_APP_SERVERURL}/update-profile`;
 
 const IMAGE_URL = 'https://e7.pngegg.com/pngimages/178/595/png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black.png';
 

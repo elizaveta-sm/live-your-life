@@ -9,8 +9,8 @@ import { NOTIFICATION_TYPES } from '../../components/ui/notification.component';
 
 import { v4 as uuidv4 } from 'uuid';
 
-const DELETE_USER_URL = `${import.meta.env.VITE_SERVERURL}/delete-profile`;
-const DELETE_ARTICLE_URL = `${import.meta.env.VITE_SERVERURL}/delete-post`;
+const DELETE_USER_URL = `${import.meta.env.VITE_REACT_APP_SERVERURL}/delete-profile`;
+const DELETE_ARTICLE_URL = `${import.meta.env.VITE_REACT_APP_SERVERURL}/delete-post`;
 
 const DeleteConfirmation = ({ state }) => {
     const { setNotification } = useContext(ToastContext);
