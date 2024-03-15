@@ -18,7 +18,7 @@ const ArticlesExcerpt = ({ post }) => {
     content = <p>{usersError}</p>
   }
 
-  const author = users?.flat().filter(user => user.email === post.user_email);
+  const author = users?.filter(user => user.email === post.user_email);
 
   return (
     <Link key={post.id} className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-xl p-5 dark:border-gray-700 dark:hover:border-transparent dark:hover:shadow-black/[.4]" to={`/${post.id}`}>
