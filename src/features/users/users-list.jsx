@@ -13,9 +13,7 @@ const UsersList = () => {
     if (usersStatus === 'loading') {
         content = <p>Loading...</p>
     } else if (usersStatus === 'succeeded' && users.length !== 0) {
-        console.log('users length: ', users.length)
-
-        content = users.flat().map(user => <CircledUserIcon key={user.email} user={user} />)
+        content = users.map(user => <CircledUserIcon key={user.email} user={user} />)
     } else if (usersStatus === 'failed') {
         content = <p>{ usersError }</p>
     } else if (users.length === 0) {
