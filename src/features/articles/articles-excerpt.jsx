@@ -18,6 +18,9 @@ const ArticlesExcerpt = ({ post }) => {
     content = <p>{usersError}</p>
   }
 
+  console.log('users: ', users)
+  console.log('post.user_email: ', post.user_email)
+
   const author = users?.filter(user => user.email === post.user_email);
 
   return (
