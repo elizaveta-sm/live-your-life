@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
 
-const USERS_URL = `${import.meta.env.VITE_REACT_APP_SERVERURL}/users`;
+const USERS_URL = `${import.meta.env.VITE_APP_SERVERURL}/users`;
 
 console.log('USERS_URL:', USERS_URL)
 
