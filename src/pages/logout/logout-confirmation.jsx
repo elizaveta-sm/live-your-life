@@ -27,8 +27,7 @@ const Logout = () => {
         navigate(-1);
     };
       
-    
-    if (Object.keys(cookies).length === 0) {
+    if (Object.keys(cookies).length === 0 || Object.values(cookies).every(cookie => cookie === undefined)) {
         navigate('/');
 
         setNotification({
