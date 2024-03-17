@@ -12,9 +12,9 @@ const Navigation = () => {
 
     console.log('cookies: ', cookies);
     
-    const userEmail = cookies.Email;
-    const userName = cookies.Username;
-    const imageUrl = cookies.ImageUrl;
+    const userEmail = (cookies.Email !== undefined) ? cookies.Email : '';
+    const userName = (cookies.Username !== undefined) ? cookies.Username : '';
+    const imageUrl = (cookies.ImageUrl !== undefined) ? cookies.ImageUrl : '';
 
     return (
       <>
