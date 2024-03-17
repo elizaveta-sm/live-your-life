@@ -72,6 +72,9 @@ const Login = () => {
 
     const accessToken = response?.data?.token;
 
+    console.log('response: ', response)
+    console.log('response data: ', response.data)
+
     if (accessToken) {
       setCookie('Email', response.data.email)
       setCookie('Username', response.data.userName)

@@ -9,6 +9,8 @@ import Footer from '../footer/footer';
 
 const Navigation = () => {
     const [cookies] = useCookies(null);
+
+    console.log('cookies: ', cookies);
     
     const userEmail = cookies.Email;
     const userName = cookies.Username;
