@@ -16,7 +16,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import axios from 'axios';
 
-const LOGIN_URL = `${import.meta.env.VITE_REACT_APP_SERVERURL}/login`;
+const LOGIN_URL = `${import.meta.env.VITE_APP_SERVERURL}/login`;
 
 
 const Login = () => {
