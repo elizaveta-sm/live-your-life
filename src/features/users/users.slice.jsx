@@ -3,6 +3,8 @@ import axios from 'axios';
 
 const USERS_URL = `${import.meta.env.VITE_REACT_APP_SERVERURL}/users`;
 
+console.log('USERS_URL:', USERS_URL)
+
 const initialState = {
     users: [],
     status: 'idle', 
