@@ -46,7 +46,7 @@ export const selectUserByEmail = (state, email) => {
         return state.users.users.find(user => user.email === email);
     }
 
-    return '';
+    return undefined;
 };
 
 export default usersSlice.reducer;
