@@ -16,6 +16,10 @@ const Navigation = () => {
     const userName = (cookies.Username !== 'undefined') ? cookies.Username : '';
     const imageUrl = (cookies.ImageUrl !== 'undefined') ? cookies.ImageUrl : '';
 
+    console.log({userName})
+    console.log({userEmail})
+    console.log({imageUrl})
+
     return (
       <>
         <header className="flex flex-wrap lg:justify-start lg:flex-nowrap z-50 w-full fixed top-0 left-0 bg-white border-b border-gray-200 text-sm md:text-base py-3 lg:py-0 dark:bg-gray-800 dark:border-gray-700">
