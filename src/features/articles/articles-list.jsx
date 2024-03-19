@@ -25,8 +25,12 @@ const ArticlesList = () => {
     const selectedUser = useSelector((state) => selectUserByEmail(state, selectedUserEmail));
 
     const selectedUserPosts = useSelector((state) => {
-        if (selectedUserEmail.length !== 0) selectArticleByUserEmail(state, selectedUserEmail)
+        if (selectedUserEmail.length !== 0) {
+            selectArticleByUserEmail(state, selectedUserEmail)
+        }
     });
+
+    console.log('selected user posts: ', selectedUserPosts);
 
     const hasSelectedUser = () => {
         if (typeof selectedUser !== 'undefined') {
