@@ -12,11 +12,16 @@ const Navigation = () => {
 
     console.log('cookies: ', cookies);
     
-    const userEmail = (cookies.Email !== undefined) ? cookies.Email : '';
-    const userName = (cookies.Username !== undefined) ? cookies.Username : '';
-    const imageUrl = (cookies.ImageUrl !== undefined) ? cookies.ImageUrl : '';
+    const checkIfUndefined = (cookie) => {
+      if (cookie !== 'undefined' || cookie !== undefined) {
+        return true;
+      }
+      return false;
+    }
 
-    console.log({userEmail})
+    const userEmail = checkIfUndefined(cookies.Email) ? cookies.Email : '';
+    const userName = checkIfUndefined(cookies.Username) ? cookies.Username : '';
+    const imageUrl = checkIfUndefined(cookies.ImageUrl) ? cookies.ImageUrl : '';
 
     return (
       <>
