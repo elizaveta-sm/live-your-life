@@ -17,11 +17,11 @@ const Navigation = () => {
         return false;
       }
       return true;
-  }
+    }
 
-    const userEmail = isUndefined(cookies.Email) ? cookies.Email : '';
-    const userName = isUndefined(cookies.Username) ? cookies.Username : '';
-    const imageUrl = isUndefined(cookies.ImageUrl) ? cookies.ImageUrl : '';
+    const userEmail = isUndefined(cookies.Email) ? '' : cookies.Email;
+    const userName = isUndefined(cookies.Username) ? '' : cookies.Username;
+    const imageUrl = isUndefined(cookies.ImageUrl) ? '' : cookies.ImageUrl;
 
     return (
       <>
