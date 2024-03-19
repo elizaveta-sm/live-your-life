@@ -9,6 +9,8 @@ const UserArticlesPage = () => {
     const routeParams = useParams();
     const { userEmail } = routeParams;
 
+    console.log('route params: ', routeParams)
+
     const [cookies, setCookie, removeCookie] = useCookies(null);
     const currentUserEmail = cookies.Email;
 
