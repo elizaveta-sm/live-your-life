@@ -13,6 +13,8 @@ const UserArticlesPage = () => {
 
     const selectedUser = useSelector((state) => selectUserByEmail(state, routeParams.userEmail));
 
+    console.log(selectedUser)
+
     return (
         <div className="w-full flex items-center justify-center">
             <div className="mt-12 pt-12">
