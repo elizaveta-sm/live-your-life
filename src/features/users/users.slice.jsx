@@ -46,6 +46,9 @@ export const selectUserByEmail = (state, email) => {
 
     if (email.length) state.users.users.find(user => user.email === email);
 
+    console.log(state.users.users)
+    console.log(state.users.users.find(user => user.email === email))
+
     return undefined
 };
 

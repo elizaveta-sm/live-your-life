@@ -7,14 +7,11 @@ import CircledUserIcon from './circled-user-icon';
 
 const UserArticlesPage = () => {
     const routeParams = useParams();
-    const { userEmail } = routeParams;
-
-    console.log('route params: ', routeParams)
 
     const [cookies, setCookie, removeCookie] = useCookies(null);
     const currentUserEmail = cookies.Email;
 
-    const selectedUser = useSelector((state) => selectUserByEmail(state, userEmail));
+    const selectedUser = useSelector((state) => selectUserByEmail(state, routeParams.userEmail));
 
     return (
         <div className="w-full flex items-center justify-center">
