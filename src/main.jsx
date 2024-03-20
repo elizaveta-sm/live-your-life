@@ -14,6 +14,7 @@ import { ToastProvider } from './context/toast.context.jsx';
 
 import('preline');
 import './index.css';
+import { UserProvider } from './context/user.context.jsx';
 
 store.dispatch(fetchUsers());
 store.dispatch(fetchPosts());
@@ -21,11 +22,13 @@ store.dispatch(fetchPosts());
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      <ToastProvider>
-        <BrowserRouter>
-          <App/>
-        </BrowserRouter>
-      </ToastProvider>
+      <UserProvider>
+        <ToastProvider>
+          <BrowserRouter>
+            <App/>
+          </BrowserRouter>
+        </ToastProvider>
+      </UserProvider>
     </Provider>
   </React.StrictMode>,
 );
