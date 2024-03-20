@@ -13,17 +13,9 @@ const Navigation = () => {
     console.log('cookies: ', cookies);
     
     const isUndefined = (cookie) => {
-      console.log('the cookie in the function: ', cookie)
-      console.log('is cookie type = undefined: ', typeof(cookie) === 'undefined')
-      console.log('is cookie = undefined: ', cookie === undefined)
-
       if (typeof(cookie) === 'undefined' || cookie === undefined) {
-        console.log('this is true')
         return true;
       }
-
-      console.log('this is false')
-      console.log('----------------')
       return false;
     }
 
