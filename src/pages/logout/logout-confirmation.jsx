@@ -7,9 +7,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import { UserContext } from "../../context/user.context";
 
 const Logout = () => {
     const { setNotification } = useContext(ToastContext);
+    const { setCurrentUser } = useContext(UserContext);
 
     const navigate = useNavigate();
     
@@ -21,6 +23,8 @@ const Logout = () => {
         removeCookie('Username');
         removeCookie('Email');
         removeCookie('ImageUrl');
+
+        setCurrentUser(null);
     };
 
     const cancelHandler = () => {
@@ -28,6 +32,8 @@ const Logout = () => {
     };
       
     if (!cookies.Username && !cookies.Email && !cookies.ImageUrl) {
+        console.log('cookies in the logout: ', cookies);
+        
         navigate('/');
 
         setNotification({

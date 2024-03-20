@@ -106,6 +106,8 @@ const UpdateUserProfile = () => {
         }
       )
 
+      console.log('response in the update user-profile: ', response)
+
       if (response.status === 200) {
 
         setCookie('Username', name)

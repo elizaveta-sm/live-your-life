@@ -11,17 +11,12 @@ import { UserContext } from "../../context/user.context";
 
 const Navigation = () => {
     const { currentUser } = useContext(UserContext);
-    console.log('the current user is: ', currentUser)
 
     const [cookies] = useCookies(null);
-
-    console.log('cookies: ', cookies);
 
     const userEmail = currentUser?.email || '';
     const userName = currentUser?.username || '';
     const imageUrl = currentUser?.imageUrl || '';
-
-    console.log('user email in the cookies in the navigation: ', userEmail)
 
     return (
       <>
