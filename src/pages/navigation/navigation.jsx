@@ -6,8 +6,14 @@ import { NavLink, Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import Footer from '../footer/footer';
+import { useContext } from "react";
+import { UserContext } from "../../context/user.context";
 
 const Navigation = () => {
+    const currentUser = useContext(UserContext);
+    console.log('the current user is: ', currentUser)
+    // ! if current user -> show the icon
+
     const [cookies] = useCookies(null);
 
     console.log('cookies: ', cookies);

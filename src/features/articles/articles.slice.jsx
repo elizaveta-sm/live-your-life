@@ -67,14 +67,18 @@ export const editPost = createAsyncThunk('posts/editPost', async (data) => {
 });
 
 export const deletePost = createAsyncThunk('posts/deletePost', async (data) => {
-    const response = await axios.delete(
-      `${POSTS_URL}/${id}`,
-        {
-            headers: { 'Content-Type': 'application/json' },
-        },
-    );
-});
+  console.log('the data in the delete post thunk: ', data)
+  console.log('the id in the data: ', data.id)
 
+  const response = await axios.delete(
+    `${POSTS_URL}/${data.id}`,
+      {
+          headers: { 'Content-Type': 'application/json' },
+      },
+  );
+
+  return response
+});
 
 export const selectAllArticles = (state) => state.articles.articles;
 export const getArticlesStatus = (state) => state.articles.status;
