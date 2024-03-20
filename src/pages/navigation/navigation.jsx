@@ -17,17 +17,10 @@ const Navigation = () => {
     const [cookies] = useCookies(null);
 
     console.log('cookies: ', cookies);
-    
-    const isUndefined = (cookie) => {
-      if (typeof(cookie) === 'undefined' || cookie === undefined) {
-        return true;
-      }
-      return false;
-    }
 
-    const userEmail = isUndefined(cookies.Email) ? '' : cookies.Email;
-    const userName = isUndefined(cookies.Username) ? '' : cookies.Username;
-    const imageUrl = isUndefined(cookies.ImageUrl) ? '' : cookies.ImageUrl;
+    const userEmail = currentUser?.email || '';
+    const userName = currentUser?.username || '';
+    const imageUrl = currentUser?.IMAGE_URL || '';
 
     console.log('user email in the cookies in the navigation: ', userEmail)
 
