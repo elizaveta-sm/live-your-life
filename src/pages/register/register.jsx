@@ -11,6 +11,7 @@ import { faCheck, faTimes, faInfoCircle } from '@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Button, { BUTTON_STYLE_TYPES } from "../../components/ui/button.component";
+import { UserContext } from "../../context/user.context";
 
 const REGISTER_URL = `${import.meta.env.VITE_APP_SERVERURL}/register`;
 
@@ -21,6 +22,7 @@ const IMAGE_URL = 'https://e7.pngegg.com/pngimages/178/595/png-clipart-user-prof
 
 const Register = () => {
   const { setNotification } = useContext(ToastContext);
+  const { setCurrentUser } = useContext(UserContext);
 
   const navigate = useNavigate();
 
@@ -116,6 +118,7 @@ const Register = () => {
           id: uuidv4(),
         })
       } else if (response.data.status === 200) {
+        setCurrentUser(username, email, password, IMAGE_URL);
         navigate('/login');
       
         setNotification({
