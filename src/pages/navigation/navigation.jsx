@@ -13,10 +13,18 @@ const Navigation = () => {
     console.log('cookies: ', cookies);
     
     const isUndefined = (cookie) => {
-      if (cookie !== 'undefined' || cookie !== undefined) {
-        return false;
+      console.log('the cookie in the function: ', cookie)
+      console.log('is cookie type = undefined: ', typeof(cookie) === 'undefined')
+      console.log('is cookie = undefined: ', cookie === undefined)
+
+      if (typeof(cookie) === 'undefined' || cookie === undefined) {
+        console.log('this is true')
+        return true;
       }
-      return true;
+
+      console.log('this is false')
+      console.log('----------------')
+      return false;
     }
 
     const userEmail = isUndefined(cookies.Email) ? '' : cookies.Email;
@@ -64,8 +72,7 @@ const Navigation = () => {
                 })}>Food</NavLink>
 
                 {
-                  // userName.length && userEmail.length ? (
-                  !isUndefined(cookies.Email) && !isUndefined(cookies.Username) ? (
+                  userName.length && userEmail.length ? (
                     <>
                       <NavLink className="hs-collapse-toggle flex items-center gap-x-2 font-medium text-gray-500 hover:underline lg:border-l lg:border-gray-300 lg:my-6 lg:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:underline" data-hs-collapse="#navbar-collapse-with-animation" to='/update-profile' style={({isActive}) => ({
                         color: isActive ? '#a855f7' : '#64748b'
