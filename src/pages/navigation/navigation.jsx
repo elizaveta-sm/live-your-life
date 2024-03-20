@@ -70,7 +70,7 @@ const Navigation = () => {
                 })}>Food</NavLink>
 
                 {
-                  userName.length && userEmail.length ? (
+                  currentUser !== null ? (
                     <>
                       <NavLink className="hs-collapse-toggle flex items-center gap-x-2 font-medium text-gray-500 hover:underline lg:border-l lg:border-gray-300 lg:my-6 lg:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:underline" data-hs-collapse="#navbar-collapse-with-animation" to='/update-profile' style={({isActive}) => ({
                         color: isActive ? '#a855f7' : '#64748b'
