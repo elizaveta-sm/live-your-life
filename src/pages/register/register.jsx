@@ -118,11 +118,6 @@ const Register = () => {
           id: uuidv4(),
         })
       } else if (response.data.status === 200) {
-        setCurrentUser({
-          username, 
-          email, 
-          IMAGE_URL
-        });
         navigate('/login');
       
         setNotification({

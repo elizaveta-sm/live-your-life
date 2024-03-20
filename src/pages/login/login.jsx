@@ -15,12 +15,14 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import axios from 'axios';
+import { UserContext } from "../../context/user.context";
 
 const LOGIN_URL = `${import.meta.env.VITE_APP_SERVERURL}/login`;
 
 
 const Login = () => {
   const { setNotification } = useContext(ToastContext);
+  const { setCurrentUser } = useContext(UserContext);
 
   const navigate = useNavigate();
 
@@ -76,6 +78,12 @@ const Login = () => {
       setCookie('Email', response.data.email)
       setCookie('Username', response.data.userName)
       setCookie('ImageUrl', response.data.imageUrl)
+
+      setCurrentUser({
+        email: response.data.email,
+        username: response.data.userName,
+        imageUrl: response.data.imageUrl,
+      });
   
       setEmail('');
       setPassword('');
