@@ -15,7 +15,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { UserContext, UserProvider } from '../../context/user.context';
+import { UserContext } from '../../context/user.context';
 
 const USER_REGEX = /(.*[a-z]){3}/i;
 const UPDATE_PROFILE_URL = `${import.meta.env.VITE_APP_SERVERURL}/update-profile`;

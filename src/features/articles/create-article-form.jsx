@@ -137,7 +137,7 @@ const CreateArticleForm = () => {
                             setCreateData(INITIAL_STATE);
                 
                             navigateTo('/');
-                            // window.location.reload(true); 
+                            window.location.reload(true); 
 
                             setNotification({
                                 message: 'Article has been successfully created.',
@@ -182,6 +182,7 @@ const CreateArticleForm = () => {
                             setEditData(INITIAL_STATE);
 
                             navigateTo('/');
+                            window.location.reload(true); 
 
                             setNotification({
                                 message: 'Your changes to the article have been successfully saved.',
@@ -205,9 +206,6 @@ const CreateArticleForm = () => {
 
     const changeHandler = (e) => {
         const { name, value } = e.target;
-
-        console.log({name: name, value: value})
-
 
         if (mode === 'create') {
             setCreateData(data => ({
