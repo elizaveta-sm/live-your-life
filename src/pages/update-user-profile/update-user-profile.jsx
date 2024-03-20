@@ -15,7 +15,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { UserProvider } from '../../context/user.context';
+import { UserContext, UserProvider } from '../../context/user.context';
 
 const USER_REGEX = /(.*[a-z]){3}/i;
 const UPDATE_PROFILE_URL = `${import.meta.env.VITE_APP_SERVERURL}/update-profile`;
@@ -24,7 +24,7 @@ const IMAGE_URL = 'https://e7.pngegg.com/pngimages/178/595/png-clipart-user-prof
 
 const UpdateUserProfile = () => {
   const { setNotification } = useContext(ToastContext);
-  const { setCurrentUser } = useContext(UserProvider);
+  const { setCurrentUser } = useContext(UserContext);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
