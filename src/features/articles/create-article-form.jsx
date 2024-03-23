@@ -206,10 +206,8 @@ const CreateArticleForm = () => {
                         if (response.status === 200) {
                             setEditData(INITIAL_STATE);
 
+                            navigateTo('/');
                             window.location.reload(true); 
-                            console.log(currentUser)
-
-                            console.log('setting the current user after the page reload')
                             setCurrentUser({
                                 email: cookies.Email,
                                 username: cookies.Username,
