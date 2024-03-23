@@ -4,8 +4,8 @@ const Footer = () => {
 
       <hr className="mb-8 border-blue-gray-50" />
       
-      <div className="text-center">
-        <img src='/assets/blog-app-logo.png' alt="Live Your Life logo" className='h-20 w-20 flex place-self-center' />
+      <div className="flex flex-col justify-center text-center">
+        <img src='/assets/blog-app-logo.png' alt="Live Your Life logo" className='h-20 w-20' />
 
         <div>
           <a className="flex-none text-xl font-semibold text-black dark:text-white" href="#" aria-label="Brand">Live Your Life</a>
