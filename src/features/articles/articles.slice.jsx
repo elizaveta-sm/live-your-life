@@ -55,6 +55,7 @@ export const addNewPost = createAsyncThunk('posts/addNewPost', async (initialSta
 })
 
 export const editPost = createAsyncThunk('posts/editPost', async (data) => {
+  console.log('edit data in the async thunk: ', data.editData)
 
   const response = await axios.put(
     `${POSTS_URL}/${data.id}`, 
