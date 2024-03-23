@@ -32,7 +32,7 @@ const Navigation = () => {
           <nav className="relative max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-6 lg:flex lg:items-center lg:justify-between lg:px-8" aria-label="Global">
             <div className="flex items-center justify-between">
               <Link className="flex-none text-xl font-semibold dark:text-white" to='/' aria-label="Brand">
-                <img src='/assets/blog-app-logo.png' alt="Live Your Life Logo" className="h-6 w-6" />
+                <img src='/assets/blog-app-logo.png' alt="Live Your Life Logo" className="h-10 w-10" />
               </Link>
               <div className="lg:hidden">
                 <button type="button" className="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-500 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800" data-hs-collapse="#navbar-collapse-with-animation" aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
