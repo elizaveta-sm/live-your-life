@@ -37,6 +37,8 @@ const CreateArticleForm = () => {
     const postsStatus = useSelector(getArticlesStatus);
     
     const [cookies] = useCookies(null);
+    console.log('cookies: ', cookies)
+
     const userEmail = currentUser.email;
     
     const id = location.state?.id;

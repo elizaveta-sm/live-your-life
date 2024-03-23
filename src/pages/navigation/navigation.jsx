@@ -11,6 +11,7 @@ import { UserContext } from "../../context/user.context";
 
 const Navigation = () => {
     const { currentUser } = useContext(UserContext);
+    console.log('current user in the navigation: ', currentUser);
 
     const [cookies] = useCookies(null);
 
