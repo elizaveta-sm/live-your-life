@@ -30,6 +30,15 @@ const CreateArticleForm = () => {
     
     const { setNotification } = useContext(ToastContext);
     const { currentUser, setCurrentUser } = useContext(UserContext); 
+
+    const notificationHandler = ({ message }) => {
+        console.log('notification handler fired')
+        setNotification({
+            message,
+            type: NOTIFICATION_TYPES.success,
+            id: uuidv4(),
+        });
+    }
     
     const [isFirstLoad, setFirstLoad] = useState(true);
     const [editDataIsFull, setEditDataIsFull] = useState(false);
@@ -137,9 +146,7 @@ const CreateArticleForm = () => {
                 type: NOTIFICATION_TYPES.warning,
                 id: uuidv4(),
             });
-            
             setCreateData(INITIAL_STATE);
-
             return;
         }
 
@@ -147,14 +154,12 @@ const CreateArticleForm = () => {
         if (canSaveCreate && mode === 'create') {
             try {
                 setRequestStatus('pending');
-    
                 dispatch(addNewPost(createData))
                     .unwrap()
                     .then((response) => {
-
                         if (response.status === 200) {
                             setCreateData(INITIAL_STATE);
-                
+
                             navigateTo('/');
                             window.location.reload(true); 
                             console.log(currentUser)
@@ -166,15 +171,9 @@ const CreateArticleForm = () => {
                                 imageUrl: cookies.ImageUrl,
                             });
 
-                            setNotification({
-                                message: 'Article has been successfully created.',
-                                type: NOTIFICATION_TYPES.success,
-                                id: uuidv4(),
-                            });
-
-                        } else {
-                            return;
+                            notificationHandler('Article has been successfully created.');
                         }
+                        console.log(response)
                     })
                     .catch((error) => {
                         setNotification({
@@ -196,13 +195,10 @@ const CreateArticleForm = () => {
         
         // * editing an article
         else if (canSaveEdit && mode === 'edit') {
-
             try {
                 dispatch(editPost({editData, id}))
                     .unwrap()
                     .then(response => {
-                        console.log('response in the edit article: ', response);
-
                         if (response.status === 200) {
                             setEditData(INITIAL_STATE);
 
@@ -215,12 +211,9 @@ const CreateArticleForm = () => {
                                 imageUrl: cookies.ImageUrl,
                             });
 
-                            setNotification({
-                                message: 'Your changes to the article have been successfully saved.',
-                                type: NOTIFICATION_TYPES.success,
-                                id: uuidv4(),
-                            });
+                            notificationHandler('Your changes to the article have been successfully saved.')
                         }
+                        console.log(response)
                     })
                     .catch(error => {
                         setNotification({
