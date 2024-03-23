@@ -55,8 +55,6 @@ export const addNewPost = createAsyncThunk('posts/addNewPost', async (initialSta
 })
 
 export const editPost = createAsyncThunk('posts/editPost', async (data) => {
-  console.log('edit data in the async thunk: ', data.editData)
-
   const response = await axios.put(
     `${POSTS_URL}/${data.id}`, 
     data.editData, 
@@ -69,9 +67,6 @@ export const editPost = createAsyncThunk('posts/editPost', async (data) => {
 });
 
 export const deletePost = createAsyncThunk('posts/deletePost', async (data) => {
-  console.log('the data in the delete post thunk: ', data)
-  console.log('the id in the data: ', data.id)
-
   const response = await axios.delete(
     `${POSTS_URL}/${data.id}`,
       {

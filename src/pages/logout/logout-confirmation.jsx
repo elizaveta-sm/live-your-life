@@ -32,8 +32,6 @@ const Logout = () => {
     };
       
     if (!cookies.Username && !cookies.Email && !cookies.ImageUrl) {
-        console.log('cookies in the logout: ', cookies);
-        
         navigate('/');
 
         setNotification({

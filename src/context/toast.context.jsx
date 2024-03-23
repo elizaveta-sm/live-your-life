@@ -14,15 +14,12 @@ export const ToastProvider = ({ children }) => {
     const [notification, setNotification] = useState({});
     
     useEffect(() => {
-
         if (Object.keys(notification).length !== 0) {
             setToasts([...toasts, notification]);
 
             setNotification({});
         }
-
         return;
-
     }, [notification])
 
     const value = { 

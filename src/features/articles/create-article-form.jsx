@@ -37,12 +37,10 @@ const CreateArticleForm = () => {
     const postsStatus = useSelector(getArticlesStatus);
     
     const [cookies] = useCookies(null);
-    console.log('cookies in the create article: ', cookies)
 
     const userEmail = currentUser ? currentUser.email 
-    : cookies.Email !== 'undefined' ? cookies.Email 
-    : '';
-    console.log('user email in the create article: ', userEmail)
+        : (cookies.Email !== 'undefined' && typeof(cookies.Email) !== 'undefined') ?  cookies.Email
+        : '';
     
     const id = location.state?.id;
     
@@ -152,8 +150,7 @@ const CreateArticleForm = () => {
                             setCreateData(INITIAL_STATE);
 
                             navigateTo('/');
-                            // window.location.reload(true);
-                            dispatch(fetchPosts());
+                            window.location.reload(true);
 
                             setNotification({
                                 message: 'Article has been successfully created.',
@@ -161,7 +158,6 @@ const CreateArticleForm = () => {
                                 id: uuidv4(),
                             });
                         }
-                        console.log(response)
                     })
                     .catch((error) => {
                         setNotification({
@@ -191,10 +187,8 @@ const CreateArticleForm = () => {
                             setEditData(INITIAL_STATE);
 
                             navigateTo('/');
-                            // window.location.reload(true); 
+                            window.location.reload(true); 
         
-                            dispatch(fetchPosts());
-                            
                             setCurrentUser({
                                 email: cookies.Email,
                                 username: cookies.Username,
@@ -207,7 +201,6 @@ const CreateArticleForm = () => {
                                 id: uuidv4(),
                             });
                         }
-                        console.log(response)
                     })
                     .catch(error => {
                         setNotification({
@@ -304,9 +297,12 @@ const CreateArticleForm = () => {
                             </div>
                 
                             <div className="mt-5 flex justify-end gap-x-2">
-                                <Link className="py-2.5 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-red-600 text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800" to='/delete-article' state={{ articleId: id }}>
-                                    Delete
-                                </Link>
+                                {  mode === 'edit' ? (
+                                        <Link className="py-2.5 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-red-600 text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800" to='/delete-article' state={{ articleId: id }}>
+                                            Delete
+                                        </Link>
+                                    ) : '' }
+                                    
                                 <Button 
                                     value='Publish' 
                                     validation={canSaveCreate || canSaveEdit}

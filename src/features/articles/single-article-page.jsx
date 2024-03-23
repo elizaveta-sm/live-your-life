@@ -31,7 +31,6 @@ const SingleArticlePage = () => {
     }, [user])
 
     useEffect(() => {
-        console.log('scrolling to the top')
         window.scrollTo(0, 0)
     }, [])
     
