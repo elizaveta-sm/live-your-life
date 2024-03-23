@@ -57,8 +57,7 @@ const UpdateUserProfile = () => {
 
   useEffect(() => {
     usernameRef.current.focus();
-    
-    console.log('scrolling to the top')
+  
     window.scrollTo(0, 0)
   }, []);
 
@@ -100,7 +99,6 @@ const UpdateUserProfile = () => {
     if (validUsername || !username) {
 
       const image = inputImageUrl || imageUrl ? inputImageUrl || imageUrl : IMAGE_URL;
-
       const name = validUsername && username ? username : userNameInCookies;
 
       const response = await axios.put(

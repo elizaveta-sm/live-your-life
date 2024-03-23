@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { v4 as uuidv4 } from 'uuid';
 
-import { addNewPost, editPost, selectArticleById } from "./articles.slice";
+import { addNewPost, editPost, fetchPosts, selectArticleById } from "./articles.slice";
 import { getArticlesStatus } from './articles.slice';
 
 import Button, { BUTTON_STYLE_TYPES } from "../../components/ui/button.component";
@@ -152,7 +152,8 @@ const CreateArticleForm = () => {
                             setCreateData(INITIAL_STATE);
 
                             navigateTo('/');
-                            window.location.reload(true);
+                            // window.location.reload(true);
+                            dispatch(fetchPosts());
 
                             setNotification({
                                 message: 'Article has been successfully created.',
@@ -190,7 +191,9 @@ const CreateArticleForm = () => {
                             setEditData(INITIAL_STATE);
 
                             navigateTo('/');
-                            window.location.reload(true); 
+                            // window.location.reload(true); 
+        
+                            dispatch(fetchPosts());
                             
                             setCurrentUser({
                                 email: cookies.Email,

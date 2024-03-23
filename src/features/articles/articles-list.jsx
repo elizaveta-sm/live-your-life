@@ -76,21 +76,17 @@ const ArticlesList = () => {
                     </div>
                 ) }
 
-                {
-                    postsStatus === 'loading' ? (
+                { postsStatus === 'loading' ? (
                         <LoadingSpinner />
                     ) : (
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             { content }
                         </div>
-                    )
-                }
+                ) }
 
-                {
-                    !articles.length && postsStatus === 'succeeded' ? (
+                { !articles.length && postsStatus === 'succeeded' ? (
                         <NoResults />
-                    ) : ''
-                }
+                    ) : '' }
 
             </div>
         </div>

@@ -8,9 +8,6 @@ import CircledUserIcon from './circled-user-icon';
 const UserArticlesPage = () => {
     const routeParams = useParams();
 
-    const [cookies, setCookie, removeCookie] = useCookies(null);
-    const currentUserEmail = cookies.Email;
-
     const selectedUser = useSelector((state) => selectUserByEmail(state, routeParams.userEmail));
 
     return (

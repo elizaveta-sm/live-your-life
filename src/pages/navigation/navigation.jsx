@@ -5,24 +5,20 @@ import { useCookies } from "react-cookie";
 import { NavLink, Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+import Logo from 'assets/blog-app-logo.png';
+
 import Footer from '../footer/footer';
 import { useContext } from "react";
 import { UserContext } from "../../context/user.context";
 
 const Navigation = () => {
     const { currentUser } = useContext(UserContext);
-    console.log('current user in the navigation: ', currentUser);
 
     const [cookies] = useCookies(null);
-
-    console.log('cookies in the navigation: ', cookies)
 
     const userEmail = currentUser ? currentUser.email 
       : (cookies.Email !== 'undefined' && typeof(cookies.Email) !== 'undefined') ?  cookies.Email
       : '';
-    console.log('type of cookies.email: ', typeof(cookies.Email))
-    console.log('cookies.email === "undefined": ', cookies.Email === 'undefined')
-    console.log('typeof(cookies.email) === "undefined": ', typeof(cookies.Email) === 'undefined')
 
     const userName = currentUser ? currentUser.username 
       : (cookies.Username !== 'undefined' && typeof(cookies.Username) !== 'undefined') ?  cookies.Username
@@ -32,17 +28,14 @@ const Navigation = () => {
       : (cookies.ImageUrl !== 'undefined' && typeof(cookies.ImageUrl) !== 'undefined') ?  cookies.ImageUrl
       : '';
 
-    console.log('user email in the nav: ', userEmail)
-    console.log('user name in the nav: ', userName)
-
-    console.log(userEmail.length)
-
     return (
       <>
         <header className="flex flex-wrap lg:justify-start lg:flex-nowrap z-50 w-full fixed top-0 left-0 bg-white border-b border-gray-200 text-sm md:text-base py-3 lg:py-0 dark:bg-gray-800 dark:border-gray-700">
           <nav className="relative max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-6 lg:flex lg:items-center lg:justify-between lg:px-8" aria-label="Global">
             <div className="flex items-center justify-between">
-              <Link className="flex-none text-xl font-semibold dark:text-white" to='/' aria-label="Brand">Live Your Life</Link>
+              <Link className="flex-none text-xl font-semibold dark:text-white" to='/' aria-label="Brand">
+                <img src={Logo} alt="Live Your Life Logo" className="h-6 w-6" />
+              </Link>
               <div className="lg:hidden">
                 <button type="button" className="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-500 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800" data-hs-collapse="#navbar-collapse-with-animation" aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
                   <svg className="hs-collapse-open:hidden w-4 h-4" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
