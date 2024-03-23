@@ -108,6 +108,19 @@ const CreateArticleForm = () => {
         }
     }, [createData.category, createData]);
 
+    useEffect(() => {
+        if (mode === 'create') {
+            return;
+        }
+
+        if (createData.category.length > 15) {
+            setEditData({
+                ...editData,
+                category: '',
+            })
+        }
+    }, [editData.category, editData]);
+
     const [requestStatus, setRequestStatus] = useState('idle')
     
     const canSaveCreate = [createData.title, createData.content].every(Boolean) && requestStatus === 'idle';
