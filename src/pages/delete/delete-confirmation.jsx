@@ -43,7 +43,7 @@ const DeleteConfirmation = ({ state }) => {
     
                 if (response.status === 200) {
                     navigate('/');
-                    window.location.reload(true);
+                    // window.location.reload(true);
     
                     setNotification({
                         message: 'Article has been successfully deleted.',
