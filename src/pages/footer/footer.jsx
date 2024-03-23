@@ -1,5 +1,3 @@
-import Logo from 'public/assets/blog-app-logo.png';
-
 const Footer = () => {
   return (
     <footer className="mt-auto w-full bottom-0 max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
@@ -7,7 +5,7 @@ const Footer = () => {
       <hr className="mb-8 border-blue-gray-50" />
       
       <div className="text-center">
-        <img src={Logo} alt="Live Your Life logo" className='h-8 w-8' />
+        <img src='/assets/blog-app-logo.png' alt="Live Your Life logo" className='h-8 w-8' />
 
         <div>
           <a className="flex-none text-xl font-semibold text-black dark:text-white" href="#" aria-label="Brand">Live Your Life</a>
