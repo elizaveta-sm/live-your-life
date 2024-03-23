@@ -22,8 +22,6 @@ const ArticlesList = () => {
     const postsStatus = useSelector(getArticlesStatus);
     const postsError = useSelector(getArticlesError);
 
-    console.log('posts: ', posts)
-
     const selectedUser = useSelector((state) => selectUserByEmail(state, selectedUserEmail));
 
     const selectedUserPosts = useSelector((state) => selectArticleByUserEmail(state, selectedUserEmail));
