@@ -124,7 +124,7 @@ const CreateArticleForm = () => {
     const [requestStatus, setRequestStatus] = useState('idle')
     
     const canSaveCreate = [createData.title, createData.content].every(Boolean) && requestStatus === 'idle';
-    const canSaveEdit = [editData.title, editData.content, editData.category].every(Boolean);
+    const canSaveEdit = [editData.title, editData.content].every(Boolean);
 
     const onPublishArticleClicked = (e) => {
         e.preventDefault();
