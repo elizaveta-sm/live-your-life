@@ -57,6 +57,9 @@ const UpdateUserProfile = () => {
 
   useEffect(() => {
     usernameRef.current.focus();
+    
+    console.log('scrolling to the top')
+    window.scrollTo(0, 0)
   }, []);
 
   useEffect(() => {

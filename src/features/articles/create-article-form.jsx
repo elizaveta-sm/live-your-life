@@ -211,7 +211,11 @@ const CreateArticleForm = () => {
                         }
                     })
                     .catch(error => {
-                        console.log(error)
+                        setNotification({
+                            message: `Error has occurred: ${error.message}.`,
+                            type: NOTIFICATION_TYPES.danger,
+                            id: uuidv4(),
+                        })
                     })
             } catch (error) {
                 setNotification({

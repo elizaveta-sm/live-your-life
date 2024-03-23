@@ -15,7 +15,7 @@ const UserArticlesPage = () => {
 
     return (
         <div className="w-full flex items-center justify-center">
-            <div className="mt-16 pt-12">
+            <div className="mt-20 pt-12">
                 <CircledUserIcon user={selectedUser} />
                 <ArticlesList />
             </div>
