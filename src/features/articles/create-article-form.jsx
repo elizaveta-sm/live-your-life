@@ -113,7 +113,7 @@ const CreateArticleForm = () => {
             return;
         }
 
-        if (createData.category.length > 15) {
+        if (editData.category.length > 15) {
             setEditData({
                 ...editData,
                 category: '',
