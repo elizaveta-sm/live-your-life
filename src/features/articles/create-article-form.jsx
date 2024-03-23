@@ -13,6 +13,7 @@ import { NOTIFICATION_TYPES } from '../../components/ui/notification.component';
 import LoadingSpinner from '../../components/ui/loading-spinner.component';
 
 import { ToastContext } from '../../context/toast.context';
+import { UserContext } from '../../context/user.context';
 
 const INITIAL_STATE = {
     title: '',
@@ -28,6 +29,7 @@ const CreateArticleForm = () => {
     const location = useLocation();
     
     const { setNotification } = useContext(ToastContext);
+    const { currentUser } = useContext(UserContext); 
     
     const [isFirstLoad, setFirstLoad] = useState(true);
     const [editDataIsFull, setEditDataIsFull] = useState(false);
@@ -35,7 +37,8 @@ const CreateArticleForm = () => {
     const postsStatus = useSelector(getArticlesStatus);
     
     const [cookies] = useCookies(null);
-    const userEmail = cookies.Email;
+    const userEmail = currentUser.email;
+    console.log('userEmail: ', userEmail)
     
     const id = location.state?.id;
     
@@ -131,13 +134,14 @@ const CreateArticleForm = () => {
                 dispatch(addNewPost(createData))
                     .unwrap()
                     .then((response) => {
-                        
+                        console.log('response in the create article: ', response);
+
                         if (response.status === 200) {
 
                             setCreateData(INITIAL_STATE);
                 
                             navigateTo('/');
-                            window.location.reload(true); 
+                            // window.location.reload(true); 
 
                             setNotification({
                                 message: 'Article has been successfully created.',
@@ -176,13 +180,13 @@ const CreateArticleForm = () => {
                 dispatch(editPost({editData, id}))
                     .unwrap()
                     .then(response => {
-                        console.log(response)
+                        console.log('response in the edit article: ', response);
 
                         if (response.status === 200) {
                             setEditData(INITIAL_STATE);
 
                             navigateTo('/');
-                            window.location.reload(true); 
+                            // window.location.reload(true); 
 
                             setNotification({
                                 message: 'Your changes to the article have been successfully saved.',
