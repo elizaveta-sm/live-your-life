@@ -8,12 +8,14 @@ import { ToastContext } from "../../context/toast.context";
 import { NOTIFICATION_TYPES } from '../../components/ui/notification.component';
 
 import { v4 as uuidv4 } from 'uuid';
+import { UserContext } from "../../context/user.context";
 
 const DELETE_USER_URL = `${import.meta.env.VITE_APP_SERVERURL}/delete-profile`;
 const DELETE_ARTICLE_URL = `${import.meta.env.VITE_APP_SERVERURL}/delete-post`;
 
 const DeleteConfirmation = ({ state }) => {
     const { setNotification } = useContext(ToastContext);
+    const { setCurrentUser } = useContext(UserContext);
 
     const location = useLocation();
     const pathname = location.pathname;
@@ -29,9 +31,8 @@ const DeleteConfirmation = ({ state }) => {
 
     const deleteHandler = async () => {
 
-        // deleting an article
+        // * deleting an article
         if (articleMode) {
-
             try {
                 const response = await axios.delete(
                     `${DELETE_ARTICLE_URL}/${articleId}`,
@@ -42,7 +43,7 @@ const DeleteConfirmation = ({ state }) => {
     
                 if (response.status === 200) {
                     navigate('/');
-                    window.location.reload(false);
+                    window.location.reload(true);
     
                     setNotification({
                         message: 'Article has been successfully deleted.',
@@ -60,7 +61,7 @@ const DeleteConfirmation = ({ state }) => {
             return;
         }
 
-        // deleting a user
+        // * deleting a user
         try {
             const response = await axios.delete(
                 `${DELETE_USER_URL}/${userEmail}`,
@@ -73,6 +74,8 @@ const DeleteConfirmation = ({ state }) => {
                 removeCookie('Username');
                 removeCookie('Email');
                 removeCookie('ImageUrl');
+
+                setCurrentUser(null);
     
                 navigate('/');
     
@@ -102,7 +105,7 @@ const DeleteConfirmation = ({ state }) => {
 
     return (
         
-        <div id="hs-danger-alert" className="mt-12 pt-12 hs-overlay w-full h-full overflow-x-hidden overflow-y-auto">
+        <div id="hs-danger-alert" className="mt-12 pt-12 hs-overlay w-full h-full overflow-x-hidden overflow-y-auto flex items-center justify-center">
 
             <div className="relative flex flex-col bg-white rounded-xl overflow-hidden dark:bg-gray-800 dark:border-gray-700">
             

@@ -208,6 +208,7 @@ const CreateArticleForm = () => {
 
                             navigateTo('/');
                             window.location.reload(true); 
+                            
                             setCurrentUser({
                                 email: cookies.Email,
                                 username: cookies.Username,
