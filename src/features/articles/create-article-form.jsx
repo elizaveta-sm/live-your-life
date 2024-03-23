@@ -29,7 +29,7 @@ const CreateArticleForm = () => {
     const location = useLocation();
     
     const { setNotification } = useContext(ToastContext);
-    const { currentUser } = useContext(UserContext); 
+    const { currentUser, setCurrentUser } = useContext(UserContext); 
     
     const [isFirstLoad, setFirstLoad] = useState(true);
     const [editDataIsFull, setEditDataIsFull] = useState(false);
@@ -37,9 +37,10 @@ const CreateArticleForm = () => {
     const postsStatus = useSelector(getArticlesStatus);
     
     const [cookies] = useCookies(null);
-    console.log('cookies: ', cookies)
+    console.log('cookies in the create article: ', cookies)
 
-    const userEmail = currentUser.email;
+    const userEmail = currentUser?.email;
+    console.log('user email in the create article: ', userEmail)
     
     const id = location.state?.id;
     
@@ -137,15 +138,18 @@ const CreateArticleForm = () => {
                     .then((response) => {
 
                         if (response.status === 200) {
-
                             setCreateData(INITIAL_STATE);
                 
                             navigateTo('/');
-
-                            console.log('reloading the page')
-                            console.log(currentUser)
                             window.location.reload(true); 
                             console.log(currentUser)
+
+                            console.log('setting the current user after the page reload')
+                            setCurrentUser({
+                                email: cookies.Email,
+                                username: cookies.Username,
+                                imageUrl: cookies.ImageUrl,
+                            });
 
                             setNotification({
                                 message: 'Article has been successfully created.',

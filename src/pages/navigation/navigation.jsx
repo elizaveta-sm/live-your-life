@@ -15,9 +15,13 @@ const Navigation = () => {
 
     const [cookies] = useCookies(null);
 
-    const userEmail = currentUser?.email || '';
-    const userName = currentUser?.username || '';
-    const imageUrl = currentUser?.imageUrl || '';
+    console.log('cookies in the navigation: ', cookies)
+
+    const userEmail = currentUser ? currentUser.email : cookies.Email;
+    const userName = currentUser ? currentUser.username : cookies.Username;
+    const imageUrl = currentUser ? currentUser.imageUrl : cookies.ImageUrl;
+
+    console.log('user email in the nav: ', userEmail)
 
     return (
       <>
