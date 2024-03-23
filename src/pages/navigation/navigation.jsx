@@ -23,6 +23,7 @@ const Navigation = () => {
       : '';
     console.log('type of cookies.email: ', typeof(cookies.Email))
     console.log('cookies.email === "undefined": ', cookies.Email === 'undefined')
+    console.log('typeof(cookies.email) === "undefined": ', typeof(cookies.Email) === 'undefined')
 
     const userName = currentUser ? currentUser.username 
       : cookies.Username !== 'undefined' ? cookies.Username 
@@ -35,6 +36,9 @@ const Navigation = () => {
       : '';
 
     console.log('user email in the nav: ', userEmail)
+    console.log('user name in the nav: ', userName)
+
+    console.log(userEmail.length)
 
     return (
       <>
