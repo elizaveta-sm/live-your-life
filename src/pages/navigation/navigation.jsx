@@ -5,7 +5,7 @@ import { useCookies } from "react-cookie";
 import { NavLink, Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import Logo from 'assets/blog-app-logo.png';
+import Logo from 'public/assets/blog-app-logo.png';
 
 import Footer from '../footer/footer';
 import { useContext } from "react";
