@@ -38,7 +38,6 @@ const CreateArticleForm = () => {
     
     const [cookies] = useCookies(null);
     const userEmail = currentUser.email;
-    console.log('userEmail: ', userEmail)
     
     const id = location.state?.id;
     
@@ -134,14 +133,17 @@ const CreateArticleForm = () => {
                 dispatch(addNewPost(createData))
                     .unwrap()
                     .then((response) => {
-                        console.log('response in the create article: ', response);
 
                         if (response.status === 200) {
 
                             setCreateData(INITIAL_STATE);
                 
                             navigateTo('/');
-                            // window.location.reload(true); 
+
+                            console.log('reloading the page')
+                            console.log(currentUser)
+                            window.location.reload(true); 
+                            console.log(currentUser)
 
                             setNotification({
                                 message: 'Article has been successfully created.',
