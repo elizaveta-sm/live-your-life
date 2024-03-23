@@ -30,15 +30,6 @@ const CreateArticleForm = () => {
     
     const { setNotification } = useContext(ToastContext);
     const { currentUser, setCurrentUser } = useContext(UserContext); 
-
-    const notificationHandler = ({ message }) => {
-        console.log('notification handler fired')
-        setNotification({
-            message,
-            type: NOTIFICATION_TYPES.success,
-            id: uuidv4(),
-        });
-    }
     
     const [isFirstLoad, setFirstLoad] = useState(true);
     const [editDataIsFull, setEditDataIsFull] = useState(false);
@@ -161,17 +152,19 @@ const CreateArticleForm = () => {
                             setCreateData(INITIAL_STATE);
 
                             navigateTo('/');
-                            window.location.reload(true); 
-                            console.log(currentUser)
+                            window.location.reload(true);
 
-                            console.log('setting the current user after the page reload')
-                            setCurrentUser({
-                                email: cookies.Email,
-                                username: cookies.Username,
-                                imageUrl: cookies.ImageUrl,
-                            });
-
-                            notificationHandler('Article has been successfully created.');
+                            setTimeout(() => {
+                                const notificationHandler = ({ message }) => {
+                                    console.log('notification handler fired')
+                                    setNotification({
+                                        message,
+                                        type: NOTIFICATION_TYPES.success,
+                                        id: uuidv4(),
+                                    });
+                                }
+                                notificationHandler('Article has been successfully created.')
+                            }, 2000);
                         }
                         console.log(response)
                     })
