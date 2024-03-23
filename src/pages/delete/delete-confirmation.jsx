@@ -17,14 +17,6 @@ const DeleteConfirmation = ({ state }) => {
     const { setNotification } = useContext(ToastContext);
     const { setCurrentUser } = useContext(UserContext);
 
-    const notificationHandler = () => {
-        setNotification({
-            message: 'Article has been successfully deleted.',
-            type: NOTIFICATION_TYPES.success,
-            id: uuidv4(),
-        });
-    }
-
     const location = useLocation();
     const pathname = location.pathname;
 
@@ -53,7 +45,11 @@ const DeleteConfirmation = ({ state }) => {
                     navigate('/');
                     window.location.reload(true);
     
-                    notificationHandler();
+                    setNotification({
+                        message: 'Article has been successfully deleted.',
+                        type: NOTIFICATION_TYPES.success,
+                        id: uuidv4(),
+                    });
                 }
             } catch (error) {
                 setNotification({

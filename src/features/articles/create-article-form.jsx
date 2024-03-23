@@ -154,17 +154,11 @@ const CreateArticleForm = () => {
                             navigateTo('/');
                             window.location.reload(true);
 
-                            setTimeout(() => {
-                                const notificationHandler = ({ message }) => {
-                                    console.log('notification handler fired')
-                                    setNotification({
-                                        message,
-                                        type: NOTIFICATION_TYPES.success,
-                                        id: uuidv4(),
-                                    });
-                                }
-                                notificationHandler('Article has been successfully created.')
-                            }, 2000);
+                            setNotification({
+                                message: 'Article has been successfully created.',
+                                type: NOTIFICATION_TYPES.success,
+                                id: uuidv4(),
+                            });
                         }
                         console.log(response)
                     })
@@ -203,8 +197,12 @@ const CreateArticleForm = () => {
                                 username: cookies.Username,
                                 imageUrl: cookies.ImageUrl,
                             });
-
-                            notificationHandler('Your changes to the article have been successfully saved.')
+                            
+                            setNotification({
+                                message: 'Your changes to the article have been successfully saved.',
+                                type: NOTIFICATION_TYPES.success,
+                                id: uuidv4(),
+                            });
                         }
                         console.log(response)
                     })

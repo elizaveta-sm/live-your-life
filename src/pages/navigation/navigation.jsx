@@ -19,16 +19,19 @@ const Navigation = () => {
 
     const userEmail = currentUser ? currentUser.email 
       : cookies.Email !== 'undefined' ? cookies.Email 
+      : typeof(cookies.Email) !== 'undefined' ? cookies.Email
       : '';
     console.log('type of cookies.email: ', typeof(cookies.Email))
     console.log('cookies.email === "undefined": ', cookies.Email === 'undefined')
 
     const userName = currentUser ? currentUser.username 
       : cookies.Username !== 'undefined' ? cookies.Username 
+      : typeof(cookies.Username) !== 'undefined' ? cookies.Username
       : '';
 
     const imageUrl = currentUser ? currentUser.imageUrl 
       : cookies.ImageUrl !== 'undefined' ? cookies.ImageUrl
+      : typeof(cookies.ImageUrl) !== 'undefined' ? cookies.ImageUrl
       : '';
 
     console.log('user email in the nav: ', userEmail)
