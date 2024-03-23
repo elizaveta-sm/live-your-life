@@ -29,6 +29,11 @@ const SingleArticlePage = () => {
     useEffect(() => {
         setAuthor(user)
     }, [user])
+
+    useEffect(() => {
+        console.log('scrolling to the top')
+        window.scrollTo(0, 0)
+    }, [])
     
     let content;
 

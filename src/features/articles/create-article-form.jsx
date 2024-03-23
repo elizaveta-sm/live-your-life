@@ -39,7 +39,9 @@ const CreateArticleForm = () => {
     const [cookies] = useCookies(null);
     console.log('cookies in the create article: ', cookies)
 
-    const userEmail = currentUser?.email;
+    const userEmail = currentUser ? currentUser.email 
+    : cookies.Email !== 'undefined' ? cookies.Email 
+    : '';
     console.log('user email in the create article: ', userEmail)
     
     const id = location.state?.id;
@@ -128,7 +130,7 @@ const CreateArticleForm = () => {
             return;
         }
 
-        // creating an article
+        // * creating an article
         if (canSaveCreate && mode === 'create') {
             try {
                 setRequestStatus('pending');
@@ -174,14 +176,12 @@ const CreateArticleForm = () => {
                     type: NOTIFICATION_TYPES.danger,
                     id: uuidv4(),
                 })
-
             } finally {
                 setRequestStatus('idle')
             }
-
         } 
         
-        // editing an article
+        // * editing an article
         else if (canSaveEdit && mode === 'edit') {
 
             try {
@@ -193,8 +193,15 @@ const CreateArticleForm = () => {
                         if (response.status === 200) {
                             setEditData(INITIAL_STATE);
 
-                            navigateTo('/');
-                            // window.location.reload(true); 
+                            window.location.reload(true); 
+                            console.log(currentUser)
+
+                            console.log('setting the current user after the page reload')
+                            setCurrentUser({
+                                email: cookies.Email,
+                                username: cookies.Username,
+                                imageUrl: cookies.ImageUrl,
+                            });
 
                             setNotification({
                                 message: 'Your changes to the article have been successfully saved.',
