@@ -54,7 +54,7 @@ const ArticlesList = () => {
     } else if (postsStatus === 'failed') {
         content = <p>{ postsError }</p>
     } else if (posts.length === 0) {
-        content = <p>Nothing is here yet.</p>
+        content = <p className="text-center">Nothing is here yet.</p>
     }
 
     return (

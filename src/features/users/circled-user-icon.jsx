@@ -9,9 +9,6 @@ const CircledUserIcon = ({ user }) => {
                 <h3 className="font-medium text-black dark:text-white">
                     {user.user_name}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                    {user.email}
-                </p>
             </div>
         </Link>
     )
