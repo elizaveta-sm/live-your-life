@@ -1,6 +1,6 @@
 # Full-Stack Blog App Using React, Node.js, Express, and PostgreSQL
 
-> :speech_balloon: Доступно на русском:
+> :speech_balloon: На русском:
 > 
 > [![Static Badge](https://img.shields.io/badge/lang-ru-%23e3242b)](https://github.com/elizaveta-sm/live-your-life/blob/main/README.ru.md)
 
