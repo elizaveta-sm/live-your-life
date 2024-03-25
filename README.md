@@ -1,6 +1,7 @@
 # Full-Stack Blog App Using React, Node.js, Express, and PostgreSQL
 
-[![Static Badge](https://img.shields.io/badge/lang-ru-%23e3242b)]()
+:speech_balloon: Доступно на русском:
+[![Static Badge](https://img.shields.io/badge/lang-ru-%23e3242b)](https://github.com/elizaveta-sm/live-your-life/blob/main/README.ru.md)
 
 > [!IMPORTANT]
 > The app is **currently in production** on [Vercel](https://vercel.com). Feel free to **experience** the app **firsthand** by following the link: [Live Your Life](https://live-your-life.vercel.app/).
@@ -11,7 +12,7 @@
 
 
 > [!NOTE]
-> This repository consists of **solely the frontend part of the application**. If you'd like to check out the **backend** code, you can follow the link: [Blog App Server](https://github.com/elizaveta-sm/blog-app-server).
+> This repository consists of **solely the frontend part of the application**. If you'd like to see the **backend** code, you can follow the link: [Blog App Server](https://github.com/elizaveta-sm/blog-app-server).
 
 
 <!-- TABLE OF CONTENTS -->
@@ -32,27 +33,28 @@
   </ol>
 </details>
 
+---
 
 <!-- ABOUT THE PROJECT -->
 ## About the Project
 
-<img alt="blog app logo" align="center" src="./Images/blog-app-logo.png" height="200" />
+<center><img alt="blog app logo" src="./Images/blog-app-logo.png" height="200" /></center>
 
-<span style="color: #7e3af2;">Live Your Life</span> is a full-stack blog application that leverages principles of **responsive and accessible web design**. **Made from scratch**, the app was intented to be a **learning tool** for me to gain hands-on experience and acquire new skills and knowldge in the process of its developement. 
+![Blog App Logo](./Images/blog-app-logo.png)
 
----
+==Live Your Life== is a full-stack blog application that leverages principles of **responsive and accessible web design**. **Made from scratch**, the app was intented to be a **learning tool** for me to gain hands-on experience and acquire new skills and knowldge in the process of its developement. 
+
 
 ### Key Features Include
 
 :star: **Read and Sort Articles**: Explore a wide range of articles by the website's users and sort them by 6 distinct categories.  
 
-:star: **Join <span style="color: #7e3af2;">Live Your Life</span>**: Create a personalized account. 
+:star: **Join ==Live Your Life==**: Create a personalized account. 
 
 :star: **Publish, Edit & Delete Articles**: Write compelling articles and share them with the world. Enjoy complete control over your content with options to edit and delete articles as needed. 
 
-<small>See <a href="#usage">Usage</a></li> for detailed information.</small> 
+> See <a href="#usage">Usage</a> for detailed information.
 
----
 
 ### Built With
 
@@ -69,7 +71,6 @@
 * [PostgreSQL](https://www.postgresql.org/)
 * [Express.js](https://expressjs.com/)
 
----
 
 ### Deployed With
 
@@ -77,8 +78,9 @@
 
 :star: **Database**: [Supabase](https://supabase.com/)
 
-<small>See <a href="#acknowledgments">Acknowledgments</a></li> for more information.</small>
+> See <a href="#acknowledgments">Acknowledgments</a> for more information.
 
+---
 
 <!-- USAGE -->
 ## Usage
@@ -135,11 +137,13 @@
 
 - Confirm your decision to log out of your account.
 
+---
 
 ## License
 Distributed under the MIT License. 
-<small>See <a href="https://github.com/elizaveta-sm/live-your-life/blob/main/LICENSE.md">LICENSE.md</a> for more information.</small>
+> See <a href="https://github.com/elizaveta-sm/live-your-life/blob/main/LICENSE.md">LICENSE.md</a> for more information.
 
+---
 
 ## Acknowledgments
  
