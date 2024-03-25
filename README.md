@@ -89,7 +89,7 @@
 <!-- USAGE -->
 ## Usage
 
- ### Register Page
+### :memo: Register Page
 <img align="center" src="./Images/live-your-life_register.png" height="500" />
 
 - Fill in the required fields with your credentials:
@@ -99,14 +99,14 @@
 
 ---
 
-### Login Page
+### :memo: Login Page
 <img align="center" src="./Images/live-your-life_login.png" height="500" />
 
 - Enter your email address and password to log in.
 
 ---
 
-### Main Page
+### :memo: Main Page
 <img align="center" src="./Images/live-your-life_main-page.png" height="500" />
 
 - You are redirected to the main page of the app after successful login.
@@ -115,7 +115,7 @@
 
 ---
 
-### Profile Settings Page
+### :memo: Profile Settings Page
 <img align="center" src="./Images/live-your-life_edit-user-page.png" height="500" />
 
 - Click on your username in the navigation bar to access your profile settings.
@@ -126,7 +126,7 @@
 
 ---
 
-### Create Article Page
+### :memo: Create Article Page
 <img align="center" src="./Images/live-your-life_create-article.png" height="500" />
 
 - Click on the "create" tab to create a new article.
@@ -134,14 +134,14 @@
 
 ---
 
-### View Created Article on the Main Page
+### :memo: View Created Article on the Main Page
 <img align="center" src="./Images/live-your-life_technology-articles.png" height="500" />
 
 - After successfully creating the article, you can view it among articles written by other users.
 
 ---
 
-### Edit/Delete Article Page
+### :memo: Edit/Delete Article Page
 <img align="center" src="./Images/live-your-life_edit-article-page.png" height="500" />
 
 - Click on the article you want to edit or delete.
@@ -150,7 +150,7 @@
 
 ---
 
-### Logout Confirmation Page
+### :memo: Logout Confirmation Page
 <img align="center" src="./Images/live-your-life_logout-page.png" height="500" />
 
 - Confirm your decision to log out of your account.
