@@ -5,8 +5,10 @@
 > [!IMPORTANT]
 > The app is **currently in production** on [Vercel](https://vercel.com). Feel free to **experience** the app **firsthand** by following the link: [Live Your Life](https://live-your-life.vercel.app/).
 
+
 > [!WARNING]  
 > **All users and articles** displayed on this website are created solely **for demonstration purposes and are NOT real**. Any resemblance to actual persons, living or dead, or real articles is purely coincidental. The content is generated to showcase the functionality of the website and doesn't represent real user data or articles. 
+
 
 > [!NOTE]
 > This repository consists of **solely the frontend part of the application**. If you'd like to check out the **backend** code, you can follow the link: [Blog App Server](https://github.com/elizaveta-sm/blog-app-server).
