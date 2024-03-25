@@ -158,7 +158,7 @@
 ## Лицензия
 
 Распространяется под лицензией MIT.
-> См. <a href="https://github.com/elizaveta-sm/live-your-life/blob/main/ЛИЦЕНЗИЯ.md">ЛИЦЕНЗИЯ.md</a> для получения дополнительной информации.
+> См. <a href="https://github.com/elizaveta-sm/live-your-life/blob/main/LICENSE.md">LICENSE.md</a> для получения дополнительной информации.
 
 &nbsp;
 
